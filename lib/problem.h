@@ -19,7 +19,7 @@ namespace problem_ns {
 /**
  * Descriptor of the force acting on the object.
  *
- * It is given in the form F=<t,fn>, where:
+ * It is given in the form F=<t,fn,ft>, where:
  * - t:  double that identifies the location on the
  *       objet's perimeter where F is applied.
  * - fn: double that specifies the amount of force applied
