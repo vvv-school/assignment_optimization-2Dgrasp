@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test Assignment Optimization 2D Grasp">
+    <description>Testing the assignment on 2D grasp through optimization</description>
+    <test type="dll"> TestAssignmentOptimization2DGrasp </test>
+</suite>
