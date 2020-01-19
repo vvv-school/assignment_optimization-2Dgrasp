@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['solve_38',['solve',['../classproblem__ns_1_1Solver.html#a4e39e4d8646a54b0892fb9e4a0ad092e',1,'problem_ns::Solver']]]
+];

@@ -1,0 +1,69 @@
+\hypertarget{classproblem__ns_1_1Grasp}{}\doxysection{problem\+\_\+ns\+::Grasp Class Reference}
+\label{classproblem__ns_1_1Grasp}\index{problem\_ns::Grasp@{problem\_ns::Grasp}}
+
+
+{\ttfamily \#include $<$solver.\+h$>$}
+
+Inheritance diagram for problem\+\_\+ns\+::Grasp\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classproblem__ns_1_1Grasp}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_ad226f80d2f8e82d846c18de14f61c906}\label{classproblem__ns_1_1Grasp_ad226f80d2f8e82d846c18de14f61c906}} 
+{\bfseries Grasp} (const \mbox{\hyperlink{classproblem__ns_1_1Problem}{Problem}} \&problem\+\_\+)
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_acb68d5339fba84e2d6c2622bdab6cb8d}\label{classproblem__ns_1_1Grasp_acb68d5339fba84e2d6c2622bdab6cb8d}} 
+const std\+::vector$<$ \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} $>$ \& {\bfseries get\+\_\+result} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a588ea401447ece2e2c900d44ea2429d4}\label{classproblem__ns_1_1Grasp_a588ea401447ece2e2c900d44ea2429d4}} 
+bool {\bfseries get\+\_\+nlp\+\_\+info} (Ipopt\+::\+Index \&n, Ipopt\+::\+Index \&m, Ipopt\+::\+Index \&nnz\+\_\+jac\+\_\+g, Ipopt\+::\+Index \&nnz\+\_\+h\+\_\+lag, Index\+Style\+Enum \&index\+\_\+style) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a3978a8454ba8bb82340176ec3a551b2c}\label{classproblem__ns_1_1Grasp_a3978a8454ba8bb82340176ec3a551b2c}} 
+bool {\bfseries get\+\_\+bounds\+\_\+info} (Ipopt\+::\+Index n, Ipopt\+::\+Number $\ast$x\+\_\+l, Ipopt\+::\+Number $\ast$x\+\_\+u, Ipopt\+::\+Index m, Ipopt\+::\+Number $\ast$g\+\_\+l, Ipopt\+::\+Number $\ast$g\+\_\+u) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_ad18cbed543ce9a22609dcbc95b86b2fe}\label{classproblem__ns_1_1Grasp_ad18cbed543ce9a22609dcbc95b86b2fe}} 
+bool {\bfseries get\+\_\+starting\+\_\+point} (Ipopt\+::\+Index n, bool init\+\_\+x, Ipopt\+::\+Number $\ast$x, bool init\+\_\+z, Ipopt\+::\+Number $\ast$z\+\_\+L, Ipopt\+::\+Number $\ast$z\+\_\+U, Ipopt\+::\+Index m, bool init\+\_\+lambda, Ipopt\+::\+Number $\ast$lambda) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a3edc6a309120ad8b3f3a4a5b8ad82d38}\label{classproblem__ns_1_1Grasp_a3edc6a309120ad8b3f3a4a5b8ad82d38}} 
+bool {\bfseries eval\+\_\+f} (Ipopt\+::\+Index n, const Ipopt\+::\+Number $\ast$x, bool new\+\_\+x, Ipopt\+::\+Number \&obj\+\_\+value) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a4a70b1de7ca1d1a60bb9bc2fde2f5525}\label{classproblem__ns_1_1Grasp_a4a70b1de7ca1d1a60bb9bc2fde2f5525}} 
+bool {\bfseries eval\+\_\+grad\+\_\+f} (Ipopt\+::\+Index n, const Ipopt\+::\+Number $\ast$x, bool new\+\_\+x, Ipopt\+::\+Number $\ast$grad\+\_\+f) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a0ceb0cc424156ecc9a8d67efe950b061}\label{classproblem__ns_1_1Grasp_a0ceb0cc424156ecc9a8d67efe950b061}} 
+bool {\bfseries eval\+\_\+g} (Ipopt\+::\+Index n, const Ipopt\+::\+Number $\ast$x, bool new\+\_\+x, Ipopt\+::\+Index m, Ipopt\+::\+Number $\ast$g) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a64ac30ae68ad7369629cec2de8bd75af}\label{classproblem__ns_1_1Grasp_a64ac30ae68ad7369629cec2de8bd75af}} 
+bool {\bfseries eval\+\_\+jac\+\_\+g} (Ipopt\+::\+Index n, const Ipopt\+::\+Number $\ast$x, bool new\+\_\+x, Ipopt\+::\+Index m, Ipopt\+::\+Index nele\+\_\+jac, Ipopt\+::\+Index $\ast$i\+Row, Ipopt\+::\+Index $\ast$j\+Col, Ipopt\+::\+Number $\ast$values) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a4c7c32a48f5288e3ae9016d4c3118318}\label{classproblem__ns_1_1Grasp_a4c7c32a48f5288e3ae9016d4c3118318}} 
+bool {\bfseries eval\+\_\+h} (Ipopt\+::\+Index n, const Ipopt\+::\+Number $\ast$x, bool new\+\_\+x, Ipopt\+::\+Number obj\+\_\+factor, Ipopt\+::\+Index m, const Ipopt\+::\+Number $\ast$lambda, bool new\+\_\+lambda, Ipopt\+::\+Index nele\+\_\+hess, Ipopt\+::\+Index $\ast$i\+Row, Ipopt\+::\+Index $\ast$j\+Col, Ipopt\+::\+Number $\ast$values) override
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_aaaaabc395670b23934143cc71748df00}\label{classproblem__ns_1_1Grasp_aaaaabc395670b23934143cc71748df00}} 
+void {\bfseries finalize\+\_\+solution} (Ipopt\+::\+Solver\+Return status, Ipopt\+::\+Index n, const Ipopt\+::\+Number $\ast$x, const Ipopt\+::\+Number $\ast$z\+\_\+L, const Ipopt\+::\+Number $\ast$z\+\_\+U, Ipopt\+::\+Index m, const Ipopt\+::\+Number $\ast$g, const Ipopt\+::\+Number $\ast$lambda, Ipopt\+::\+Number obj\+\_\+value, const Ipopt\+::\+Ipopt\+Data $\ast$ip\+\_\+data, Ipopt\+::\+Ipopt\+Calculated\+Quantities $\ast$ip\+\_\+cq) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_a25663e5c2237a21cd9e426aac7435cd8}\label{classproblem__ns_1_1Grasp_a25663e5c2237a21cd9e426aac7435cd8}} 
+const \mbox{\hyperlink{classproblem__ns_1_1Problem}{Problem}} \& {\bfseries problem}
+\item 
+\mbox{\Hypertarget{classproblem__ns_1_1Grasp_af4afe826e6c81bf50dbd5cf21e65b6b7}\label{classproblem__ns_1_1Grasp_af4afe826e6c81bf50dbd5cf21e65b6b7}} 
+std\+::vector$<$ \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} $>$ {\bfseries result}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+NLP API. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/assignment\+\_\+optimization-\/2\+Dgrasp/assignment\+\_\+optimization-\/2\+Dgrasp/gh-\/pages/lib/solver.\+h\item 
+/home/runner/work/assignment\+\_\+optimization-\/2\+Dgrasp/assignment\+\_\+optimization-\/2\+Dgrasp/gh-\/pages/lib/solver.\+cpp\end{DoxyCompactItemize}

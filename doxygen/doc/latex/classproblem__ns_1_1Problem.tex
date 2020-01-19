@@ -1,0 +1,270 @@
+\hypertarget{classproblem__ns_1_1Problem}{}\doxysection{problem\+\_\+ns\+::Problem Class Reference}
+\label{classproblem__ns_1_1Problem}\index{problem\_ns::Problem@{problem\_ns::Problem}}
+
+
+{\ttfamily \#include $<$problem.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classproblem__ns_1_1Problem_a88e17aa241af76f174decae3a5668b95}{configure}} (const std\+::vector$<$ double $>$ \&shape, const double friction, const \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} \&F)
+\item 
+const std\+::vector$<$ double $>$ \& \mbox{\hyperlink{classproblem__ns_1_1Problem_a46117bad459621e042b2369969383333}{get\+\_\+shape}} () const
+\item 
+double \mbox{\hyperlink{classproblem__ns_1_1Problem_ae132d931055f8b76f216cc9b924712d8}{get\+\_\+friction}} () const
+\item 
+const \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} \& \mbox{\hyperlink{classproblem__ns_1_1Problem_a255846367035668c964c781c8e6f802c}{get\+\_\+F}} () const
+\item 
+const yarp\+::sig\+::\+Vector \& \mbox{\hyperlink{classproblem__ns_1_1Problem_ac32523e4522dfc64dccfd2c3793f4c9d}{get\+\_\+\+COM}} () const
+\item 
+yarp\+::sig\+::\+Vector \mbox{\hyperlink{classproblem__ns_1_1Problem_a0f5a12d2c85c708fae98d167e11efee7}{get\+\_\+P}} (const double t) const
+\item 
+yarp\+::sig\+::\+Vector \mbox{\hyperlink{classproblem__ns_1_1Problem_ab23bb082f295948466abdd4f8121378e}{get\+\_\+dP}} (const double t) const
+\item 
+yarp\+::sig\+::\+Vector \mbox{\hyperlink{classproblem__ns_1_1Problem_a306c1564ec813105f0bd76394f368658}{get\+\_\+T}} (const double t) const
+\item 
+yarp\+::sig\+::\+Vector \mbox{\hyperlink{classproblem__ns_1_1Problem_af8eb1455a334a5eaac21b8ec6df2366d}{get\+\_\+dT}} (const double t) const
+\item 
+yarp\+::sig\+::\+Vector \mbox{\hyperlink{classproblem__ns_1_1Problem_aa602eb7b83c2e2551c1fa00be7fe739e}{get\+\_\+N}} (const double t) const
+\item 
+yarp\+::sig\+::\+Vector \mbox{\hyperlink{classproblem__ns_1_1Problem_a523a86d63905550165fb488b879c5a5b}{get\+\_\+dN}} (const double t) const
+\item 
+std\+::pair$<$ yarp\+::sig\+::\+Vector, double $>$ \mbox{\hyperlink{classproblem__ns_1_1Problem_acb358a74acae05682bb45d42531cdc50}{compute\+\_\+newton\+\_\+law}} (const std\+::vector$<$ \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} $>$ \&forces) const
+\item 
+bool \mbox{\hyperlink{classproblem__ns_1_1Problem_a21348d0f963c6fc0b4659eb1057df3db}{check\+\_\+no\+\_\+slippage}} (const \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} \&force) const
+\item 
+bool \mbox{\hyperlink{classproblem__ns_1_1Problem_a0cd64591d7f44a685ec1ee6e862a480d}{check\+\_\+no\+\_\+slippage}} (const std\+::vector$<$ \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} $>$ \&forces) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classproblem__ns_1_1Problem}{Problem}} $>$ \mbox{\hyperlink{classproblem__ns_1_1Problem_a530593470f3d856e5183f28924706d25}{generate}} ()
+\item 
+static double \mbox{\hyperlink{classproblem__ns_1_1Problem_aebc933731eadb86bb2114b5b9f863e38}{wrap\+\_\+angle}} (const double t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classproblem__ns_1_1Problem}{Problem}} API. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a21348d0f963c6fc0b4659eb1057df3db}\label{classproblem__ns_1_1Problem_a21348d0f963c6fc0b4659eb1057df3db}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!check\_no\_slippage@{check\_no\_slippage}}
+\index{check\_no\_slippage@{check\_no\_slippage}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{check\_no\_slippage()}{check\_no\_slippage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Problem\+::check\+\_\+no\+\_\+slippage (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} \&}]{force }\end{DoxyParamCaption}) const}
+
+Check if the force is within the friction cone. 
+\begin{DoxyParams}{Parameters}
+{\em force} & is the 2D inward force. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the check has passed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a0cd64591d7f44a685ec1ee6e862a480d}\label{classproblem__ns_1_1Problem_a0cd64591d7f44a685ec1ee6e862a480d}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!check\_no\_slippage@{check\_no\_slippage}}
+\index{check\_no\_slippage@{check\_no\_slippage}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{check\_no\_slippage()}{check\_no\_slippage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool problem\+\_\+ns\+::\+Problem\+::check\+\_\+no\+\_\+slippage (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} $>$ \&}]{forces }\end{DoxyParamCaption}) const}
+
+Check if the forces are within the friction cones. 
+\begin{DoxyParams}{Parameters}
+{\em forces} & is the vector of 2D inward forces. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the check has passed for all forces. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_acb358a74acae05682bb45d42531cdc50}\label{classproblem__ns_1_1Problem_acb358a74acae05682bb45d42531cdc50}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!compute\_newton\_law@{compute\_newton\_law}}
+\index{compute\_newton\_law@{compute\_newton\_law}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{compute\_newton\_law()}{compute\_newton\_law()}}
+{\footnotesize\ttfamily pair$<$ Vector, double $>$ Problem\+::compute\+\_\+newton\+\_\+law (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} $>$ \&}]{forces }\end{DoxyParamCaption}) const}
+
+Compute the total force and torque acting on the object due to F and input forces. 
+\begin{DoxyParams}{Parameters}
+{\em forces} & is the 2D vector of the inward forces. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair representing the total force and torque. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a88e17aa241af76f174decae3a5668b95}\label{classproblem__ns_1_1Problem_a88e17aa241af76f174decae3a5668b95}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!configure@{configure}}
+\index{configure@{configure}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily bool Problem\+::configure (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{shape,  }\item[{const double}]{friction,  }\item[{const \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} \&}]{F }\end{DoxyParamCaption})}
+
+Configure the problem. 
+\begin{DoxyParams}{Parameters}
+{\em shape} & is a 4D vector containing the coefficients of the object\textquotesingle{}s perimeter. \\
+\hline
+{\em friction} & is in range \mbox{[}0,1\mbox{]}. \\
+\hline
+{\em F} & is the applied force. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a530593470f3d856e5183f28924706d25}\label{classproblem__ns_1_1Problem_a530593470f3d856e5183f28924706d25}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!generate@{generate}}
+\index{generate@{generate}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{classproblem__ns_1_1Problem}{Problem}} $>$ Problem\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a random problem. \begin{DoxyReturn}{Returns}
+the problem. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_ac32523e4522dfc64dccfd2c3793f4c9d}\label{classproblem__ns_1_1Problem_ac32523e4522dfc64dccfd2c3793f4c9d}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_COM@{get\_COM}}
+\index{get\_COM@{get\_COM}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_COM()}{get\_COM()}}
+{\footnotesize\ttfamily const Vector \& Problem\+::get\+\_\+\+COM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retrieve the COM of the object. \begin{DoxyReturn}{Returns}
+a YARP vector containing the x and y coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a523a86d63905550165fb488b879c5a5b}\label{classproblem__ns_1_1Problem_a523a86d63905550165fb488b879c5a5b}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_dN@{get\_dN}}
+\index{get\_dN@{get\_dN}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_dN()}{get\_dN()}}
+{\footnotesize\ttfamily Vector Problem\+::get\+\_\+dN (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+Retrieve the derivative of the inward normal N on the object\textquotesingle{}s perimeter. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a YARP vector containing the x and y coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_ab23bb082f295948466abdd4f8121378e}\label{classproblem__ns_1_1Problem_ab23bb082f295948466abdd4f8121378e}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_dP@{get\_dP}}
+\index{get\_dP@{get\_dP}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_dP()}{get\_dP()}}
+{\footnotesize\ttfamily Vector Problem\+::get\+\_\+dP (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+Retrieve the derivative of the point P on the object\textquotesingle{}s perimeter. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a YARP vector containing the x and y coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_af8eb1455a334a5eaac21b8ec6df2366d}\label{classproblem__ns_1_1Problem_af8eb1455a334a5eaac21b8ec6df2366d}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_dT@{get\_dT}}
+\index{get\_dT@{get\_dT}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_dT()}{get\_dT()}}
+{\footnotesize\ttfamily Vector Problem\+::get\+\_\+dT (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+Retrieve the derivative of the tangent T on the object\textquotesingle{}s perimeter. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a YARP vector containing the x and y coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a255846367035668c964c781c8e6f802c}\label{classproblem__ns_1_1Problem_a255846367035668c964c781c8e6f802c}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_F@{get\_F}}
+\index{get\_F@{get\_F}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_F()}{get\_F()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structproblem__ns_1_1Force}{Force}} \& Problem\+::get\+\_\+F (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retrieve the force applied to the object. \begin{DoxyReturn}{Returns}
+the force F. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_ae132d931055f8b76f216cc9b924712d8}\label{classproblem__ns_1_1Problem_ae132d931055f8b76f216cc9b924712d8}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_friction@{get\_friction}}
+\index{get\_friction@{get\_friction}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_friction()}{get\_friction()}}
+{\footnotesize\ttfamily double Problem\+::get\+\_\+friction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retrieve the friction value. \begin{DoxyReturn}{Returns}
+the friction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_aa602eb7b83c2e2551c1fa00be7fe739e}\label{classproblem__ns_1_1Problem_aa602eb7b83c2e2551c1fa00be7fe739e}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_N@{get\_N}}
+\index{get\_N@{get\_N}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_N()}{get\_N()}}
+{\footnotesize\ttfamily Vector Problem\+::get\+\_\+N (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+Retrieve the normal N on the object\textquotesingle{}s perimeter. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a YARP vector containing the x and y coordinates.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+$\vert$\+N$\vert$≠1, i.\+e. N is not a unit vector. 
+
+(T×N)·z$>$0, i.\+e. N points inward. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a0f5a12d2c85c708fae98d167e11efee7}\label{classproblem__ns_1_1Problem_a0f5a12d2c85c708fae98d167e11efee7}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_P@{get\_P}}
+\index{get\_P@{get\_P}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_P()}{get\_P()}}
+{\footnotesize\ttfamily Vector Problem\+::get\+\_\+P (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+Retrieve the point P on the object\textquotesingle{}s perimeter. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a YARP vector containing the x and y coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a46117bad459621e042b2369969383333}\label{classproblem__ns_1_1Problem_a46117bad459621e042b2369969383333}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_shape@{get\_shape}}
+\index{get\_shape@{get\_shape}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_shape()}{get\_shape()}}
+{\footnotesize\ttfamily const vector$<$ double $>$ \& Problem\+::get\+\_\+shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Retrieve the current vector of coefficients describing the object\textquotesingle{}s perimeter. \begin{DoxyReturn}{Returns}
+the perimeter\textquotesingle{}s coefficients. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_a306c1564ec813105f0bd76394f368658}\label{classproblem__ns_1_1Problem_a306c1564ec813105f0bd76394f368658}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!get\_T@{get\_T}}
+\index{get\_T@{get\_T}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{get\_T()}{get\_T()}}
+{\footnotesize\ttfamily Vector Problem\+::get\+\_\+T (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption}) const}
+
+Retrieve the tangent T on the object\textquotesingle{}s perimeter. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a YARP vector containing the x and y coordinates.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+$\vert$\+T$\vert$≠1, i.\+e. T is not a unit vector. 
+
+T·dP$>$0, i.\+e. T is aligned w/ velocity. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classproblem__ns_1_1Problem_aebc933731eadb86bb2114b5b9f863e38}\label{classproblem__ns_1_1Problem_aebc933731eadb86bb2114b5b9f863e38}} 
+\index{problem\_ns::Problem@{problem\_ns::Problem}!wrap\_angle@{wrap\_angle}}
+\index{wrap\_angle@{wrap\_angle}!problem\_ns::Problem@{problem\_ns::Problem}}
+\doxysubsubsection{\texorpdfstring{wrap\_angle()}{wrap\_angle()}}
+{\footnotesize\ttfamily double Problem\+::wrap\+\_\+angle (\begin{DoxyParamCaption}\item[{const double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper function that returns the parameter t within the interval \mbox{[}0, 2$\ast$\+PI\mbox{]}. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the input parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the wrapped version of t. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/assignment\+\_\+optimization-\/2\+Dgrasp/assignment\+\_\+optimization-\/2\+Dgrasp/gh-\/pages/lib/problem.\+h\item 
+/home/runner/work/assignment\+\_\+optimization-\/2\+Dgrasp/assignment\+\_\+optimization-\/2\+Dgrasp/gh-\/pages/lib/problem.\+cpp\end{DoxyCompactItemize}
