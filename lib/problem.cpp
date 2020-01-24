@@ -270,15 +270,15 @@ Vector Problem::get_dN(const double t) const
 }
 
 /***************************************************/
-pair<Vector,double> Problem::compute_newton_laws(const vector<Force>& forces) const
+pair<Vector,double> Problem::compute_newton_law(const vector<Force>& forces) const
 {
     assert(forces.size()==2);
 
-    // Newton 1st law (x,y axes)
+    // linear (x,y axes)
     auto Ftot=F.fn*get_N(F.t)+forces[0].fn*get_N(forces[0].t)+forces[1].fn*get_N(forces[1].t)+
               F.ft*get_T(F.t)+forces[0].ft*get_T(forces[0].t)+forces[1].ft*get_T(forces[1].t);
 
-    // Newton 2nd law (z-axis)
+    // rotation (z-axis)
     auto Mtot=(get_P(F.t)-COM)[0]*(F.fn*get_N(F.t)[1]+F.ft*get_T(F.t)[1])-
               (get_P(F.t)-COM)[1]*(F.fn*get_N(F.t)[0]+F.ft*get_T(F.t)[0])+
               (get_P(forces[0].t)-COM)[0]*(forces[0].fn*get_N(forces[0].t)[1]+forces[0].ft*get_T(forces[0].t)[1])-

@@ -154,7 +154,7 @@ public:
     * @param forces is the 2D vector of the inward forces.
     * @return a pair representing the total force and momentum.
     */
-    std::pair<yarp::sig::Vector,double> compute_newton_laws(const std::vector<Force>& forces) const;
+    std::pair<yarp::sig::Vector,double> compute_newton_law(const std::vector<Force>& forces) const;
 
    /**
     * Check if the force is within the friction cone.

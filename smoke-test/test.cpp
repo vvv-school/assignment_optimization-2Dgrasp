@@ -36,7 +36,7 @@ class TestAssignmentOptimization2DGrasp : public yarp::robottestingframework::Te
     // we duplicate code here instead of reusing the lib in order to avoid cheating 😉
 
     /******************************************************************/
-    pair<Vector,double> compute_newton_laws(const Problem& problem, const vector<Force>& forces) const
+    pair<Vector,double> compute_newton_law(const Problem& problem, const vector<Force>& forces) const
     {
         assert(forces.size()==2);
         auto F=problem.get_F();
@@ -108,7 +108,7 @@ public:
                     problem->configure(vector<double>({.0,.0,.0,.0}),problem->get_friction(),F);
                 }
                 auto forces=Solver::solve(*problem,false);
-                auto F_M=compute_newton_laws(*problem,forces);
+                auto F_M=compute_newton_law(*problem,forces);
                 bool failure_detected{false};
 
                 auto F=norm(F_M.first);

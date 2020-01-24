@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
         problem->configure(vector<double>({.0,.0,.0,.0}),problem->get_friction(),F);
     }
     auto forces=Solver::solve(*problem);
-    auto F_M=problem->compute_newton_laws(forces);
+    auto F_M=problem->compute_newton_law(forces);
 
     cout.precision(5); cout << fixed;
     cout << "F = " << F_M.first.toString(5,5) << endl;
