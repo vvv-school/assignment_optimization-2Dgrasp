@@ -21,7 +21,7 @@ of an external agent exerting the force.
 | :---: |
 | ![object](/assets/object.png) |
 
-The goal is to **find out a suitable pair of forces** `F1` and `F2` that when applied to the object are capable of producing a **stable grasp**.
+🎯 The goal is to **find out a suitable pair of forces** `F1` and `F2` that when applied to the object are capable of producing a **stable grasp**.
 To achieve this, the forces need to **point inward** and guarantee that **Newton's first law** is satisfied both for linear and rotational motion.
 Further, to **prevent slippage**, `F1` and `F2` are requested to lie within their **friction cones**.
 
