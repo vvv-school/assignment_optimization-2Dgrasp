@@ -128,7 +128,7 @@ $ ./test.sh
 ```
 
 <details>
-<summary>Click to show how the grading system will assign you score</summary>
+<summary>👉 Click to show how the grading system will assign you score</summary>
 
 ---
 The test suite will perform two consecutive verifications:
