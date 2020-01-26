@@ -31,7 +31,7 @@ F1=fscanf(fid,'%f %f %f %f %f %f %f %f',[1 8]);
 F2=fscanf(fid,'%f %f %f %f %f %f %f %f',[1 8]);
 COM=fscanf(fid,'%f %f',[1 2]);
 Ft=fscanf(fid,'%f %f',[1 2]);
-Mt=fscanf(fid,'%f',1);
+Tt=fscanf(fid,'%f',1);
 fclose(fid);
 
 % plot data
@@ -49,7 +49,7 @@ display_friction_cone(F0,friction);
 display_friction_cone(F1,friction);
 display_friction_cone(F2,friction);
 text(1.05,.95,sprintf('F = (%.3f %.3f)',Ft(1),Ft(2)));
-text(1.05,.85,sprintf('M = %.3f',Mt));
+text(1.05,.85,sprintf('T = %.3f',Tt));
 
 % save plot as file
 out=[filename '.png'];
