@@ -56,7 +56,7 @@ yarp::sig::Vector T0=problem.get_T(F0.t);
 
 // F1 and F2 are to be provided
 problem_ns::Force F1, F2;
-// same for F1, F2 relative quantities
+// retrieve P1,N1,T1 and P2,N2,T2 analogously
 
 // linear (x,y axes)
 yarp::sig::Vector Ftot=F0.fn*N0+F1.fn*N1+F2.fn*N2+F0.ft*T0+F1.ft*T1+F2.ft*T2;
