@@ -115,11 +115,11 @@ In both cases, the outcome can be conveniently displayed this way:
 ```sh
 $ plot_2Dgrasp-problem problem.out
 ```
-Then, open up the file `problem.out.png`.
+Then, open up the file `problem.out.png`. Figure 3 illustrates a typical outcome.
 
-Here's a typical outcome:
-
-![example-solution](/assets/example-solution.png)
+| Figure 3 |
+| :---: |
+| ![example-solution](/assets/example-solution.png) |
 
 Once you deem you're ready to go, you can accept the challenge of the grading test suite by doing:
 ```sh
