@@ -43,13 +43,13 @@ class TestAssignmentOptimization2DGrasp : public yarp::robottestingframework::Te
         auto COM=problem.get_COM();
         auto Ftot=F.fn*problem.get_N(F.t)+forces[0].fn*problem.get_N(forces[0].t)+forces[1].fn*problem.get_N(forces[1].t)+
                   F.ft*problem.get_T(F.t)+forces[0].ft*problem.get_T(forces[0].t)+forces[1].ft*problem.get_T(forces[1].t);
-        auto Mtot=(problem.get_P(F.t)-COM)[0]*(F.fn*problem.get_N(F.t)[1]+F.ft*problem.get_T(F.t)[1])-
+        auto Ttot=(problem.get_P(F.t)-COM)[0]*(F.fn*problem.get_N(F.t)[1]+F.ft*problem.get_T(F.t)[1])-
                   (problem.get_P(F.t)-COM)[1]*(F.fn*problem.get_N(F.t)[0]+F.ft*problem.get_T(F.t)[0])+
                   (problem.get_P(forces[0].t)-COM)[0]*(forces[0].fn*problem.get_N(forces[0].t)[1]+forces[0].ft*problem.get_T(forces[0].t)[1])-
                   (problem.get_P(forces[0].t)-COM)[1]*(forces[0].fn*problem.get_N(forces[0].t)[0]+forces[0].ft*problem.get_T(forces[0].t)[0])+
                   (problem.get_P(forces[1].t)-COM)[0]*(forces[1].fn*problem.get_N(forces[1].t)[1]+forces[1].ft*problem.get_T(forces[1].t)[1])-
                   (problem.get_P(forces[1].t)-COM)[1]*(forces[1].fn*problem.get_N(forces[1].t)[0]+forces[1].ft*problem.get_T(forces[1].t)[0]);
-        return make_pair(Ftot,Mtot);
+        return make_pair(Ftot,Ttot);
     }
 
     /******************************************************************/
@@ -90,8 +90,8 @@ public:
     /******************************************************************/
     void run() override
     {
-        double F_eps{.01}, M_eps{.01};
-        int F_fails{0}, M_fails{0}, slippage_fails{0};
+        double F_eps{.01}, T_eps{.01};
+        int F_fails{0}, T_fails{0}, slippage_fails{0};
         int N{100}, score{0};
 
         vector<string> types{"circle","patch"};
@@ -108,21 +108,21 @@ public:
                     problem->configure(vector<double>({.0,.0,.0,.0}),problem->get_friction(),F);
                 }
                 auto forces=Solver::solve(*problem,false);
-                auto F_M=compute_newton_law(*problem,forces);
+                auto F_T=compute_newton_law(*problem,forces);
                 bool failure_detected{false};
 
-                auto F=norm(F_M.first);
+                auto F=norm(F_T.first);
                 if (F>F_eps) {
                     ss << "⚠ |F| = " << F << " > " << F_eps << "; ";
                     failure_detected=true;
                     F_fails++;
                 }
 
-                auto M=fabs(F_M.second);
-                if (M>M_eps) {
-                    ss << "⚠ |M| = " << M << " > " << M_eps << "; ";
+                auto T=fabs(F_T.second);
+                if (T>T_eps) {
+                    ss << "⚠ |T| = " << T << " > " << T_eps << "; ";
                     failure_detected=true;
-                    M_fails++;
+                    T_fails++;
                 }
 
                 if (!check_no_slippage(*problem,forces)) {
@@ -140,12 +140,12 @@ public:
             auto M=4.;
             auto boost=(type=="circle"?1.1:.98);
             auto F_points=assign_score(F_fails,N,M,boost);
-            auto M_points=assign_score(M_fails,N,M,boost);
+            auto T_points=assign_score(T_fails,N,M,boost);
             auto slippage_points=assign_score(slippage_fails,N,M,boost);
             ROBOTTESTINGFRAMEWORK_TEST_REPORT(Asserter::format("|F| < %g verified %d / %d ➡ %d points granted",F_eps,N-F_fails,N,F_points));
-            ROBOTTESTINGFRAMEWORK_TEST_REPORT(Asserter::format("|M| < %g verified %d / %d ➡ %d points granted",M_eps,N-M_fails,N,M_points));
+            ROBOTTESTINGFRAMEWORK_TEST_REPORT(Asserter::format("|T| < %g verified %d / %d ➡ %d points granted",T_eps,N-T_fails,N,T_points));
             ROBOTTESTINGFRAMEWORK_TEST_REPORT(Asserter::format("slippage checks successful %d / %d ➡ %d points granted",N-slippage_fails,N,slippage_points));
-            score+=F_points+M_points+slippage_points;
+            score+=F_points+T_points+slippage_points;
         }
         ROBOTTESTINGFRAMEWORK_TEST_CHECK(score>0,Asserter::format("Total score = %d",score));
     }

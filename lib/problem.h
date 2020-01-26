@@ -150,9 +150,9 @@ public:
     yarp::sig::Vector get_dN(const double t) const;
 
    /**
-    * Compute the total force and momentum of the object under the action of F and input forces.
+    * Compute the total force and torque of the object under the action of F and input forces.
     * @param forces is the 2D vector of the inward forces.
-    * @return a pair representing the total force and momentum.
+    * @return a pair representing the total force and torque.
     */
     std::pair<yarp::sig::Vector,double> compute_newton_law(const std::vector<Force>& forces) const;
 

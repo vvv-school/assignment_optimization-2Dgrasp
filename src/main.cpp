@@ -57,11 +57,11 @@ int main(int argc, char* argv[])
         problem->configure(vector<double>({.0,.0,.0,.0}),problem->get_friction(),F);
     }
     auto forces=Solver::solve(*problem);
-    auto F_M=problem->compute_newton_law(forces);
+    auto F_T=problem->compute_newton_law(forces);
 
     cout.precision(5); cout << fixed;
-    cout << "F = " << F_M.first.toString(5,5) << endl;
-    cout << "M = " << F_M.second << endl;
+    cout << "F = " << F_T.first.toString(5,5) << endl;
+    cout << "T = " << F_T.second << endl;
     if (!problem->check_no_slippage(forces)) {
         cerr << "Solved forces are causing slippage!" << endl;
     }
@@ -81,8 +81,8 @@ int main(int argc, char* argv[])
     fout << forceToString(problem,forces[0]) << " " << problem->get_N(forces[0].t).toString(5,5) << endl;
     fout << forceToString(problem,forces[1]) << " " << problem->get_N(forces[1].t).toString(5,5) << endl;
     fout << problem->get_COM().toString(5,5) << endl;
-    fout << F_M.first.toString(5,5) << endl;
-    fout << F_M.second<< endl;
+    fout << F_T.first.toString(5,5) << endl;
+    fout << F_T.second<< endl;
     
     fout.close();
     return EXIT_SUCCESS;

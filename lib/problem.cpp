@@ -279,14 +279,14 @@ pair<Vector,double> Problem::compute_newton_law(const vector<Force>& forces) con
               F.ft*get_T(F.t)+forces[0].ft*get_T(forces[0].t)+forces[1].ft*get_T(forces[1].t);
 
     // rotation (z-axis)
-    auto Mtot=(get_P(F.t)-COM)[0]*(F.fn*get_N(F.t)[1]+F.ft*get_T(F.t)[1])-
+    auto Ttot=(get_P(F.t)-COM)[0]*(F.fn*get_N(F.t)[1]+F.ft*get_T(F.t)[1])-
               (get_P(F.t)-COM)[1]*(F.fn*get_N(F.t)[0]+F.ft*get_T(F.t)[0])+
               (get_P(forces[0].t)-COM)[0]*(forces[0].fn*get_N(forces[0].t)[1]+forces[0].ft*get_T(forces[0].t)[1])-
               (get_P(forces[0].t)-COM)[1]*(forces[0].fn*get_N(forces[0].t)[0]+forces[0].ft*get_T(forces[0].t)[0])+
               (get_P(forces[1].t)-COM)[0]*(forces[1].fn*get_N(forces[1].t)[1]+forces[1].ft*get_T(forces[1].t)[1])-
               (get_P(forces[1].t)-COM)[1]*(forces[1].fn*get_N(forces[1].t)[0]+forces[1].ft*get_T(forces[1].t)[0]);
     
-    return make_pair(Ftot,Mtot);
+    return make_pair(Ftot,Ttot);
 }
 
 /***************************************************/
