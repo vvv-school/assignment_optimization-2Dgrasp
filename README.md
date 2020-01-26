@@ -89,6 +89,7 @@ assignment_optimization-2Dgrasp
 ```
 
 You are asked to develop within the file `lib/solver.cpp` the solution that exploits the nonlinear constrained optimization package Ipopt.
+
 The library is [documented online](https://vvv-school.github.io/assignment_optimization-2Dgrasp) 🌐
 
 ### Build the Code
@@ -126,15 +127,10 @@ $ cd assignment_optimization-2Dgrasp/smoke-test
 $ ./test.sh
 ```
 
-## Incremental Approach
-We recommend that you tackle the assignment incrementally:
-1. First, [**peruse the solution we provided**](https://github.com/vvv-school/assignment_optimization-2Dgrasp/wiki/Solution-for-Linear-Motion-Only) for the case of an object with a perfect circular perimeter where torques can be negleted and the focus is only on normal forces. 
-1. Then, extend the solution in order to incorporate Newton's first law also for **rotational motion**.
-1. Finally, consider friction cones and thus deal with **tangential components** of the forces, while avoiding slippage.
-
 <details>
-<summary>Click to show how Grading works</summary>
+<summary>Click to show how the grading system will assign you score</summary>
 
+---
 The test suite will perform two consecutive verifications:
 1. A Problem with an object whose shape is a **perfect cirlce** is generated **100 times** and checks are done to verify the grasp stability of your solution.
    The force `F0` is always set normal to the perimeter.
@@ -167,6 +163,14 @@ If the success rate of requirements R2.* is greater than or equal to 98%, then y
 | R2.3 | 0 … 8 |
 
 The maximum score you can achieve is therefore **36** 🏆
+
+---
 </details>
+
+## Incremental Approach
+We recommend that you tackle the assignment incrementally:
+1. First, [**peruse the solution we provided**](https://github.com/vvv-school/assignment_optimization-2Dgrasp/wiki/Solution-for-Linear-Motion-Only) for the case of an object with a perfect circular perimeter where torques can be negleted and the focus is only on normal forces. 
+1. Then, extend the solution in order to incorporate Newton's first law also for **rotational motion**.
+1. Finally, consider friction cones and thus deal with **tangential components** of the forces, while avoiding slippage.
 
 # [How to complete the assignment](https://github.com/vvv-school/vvv-school.github.io/blob/master/instructions/how-to-complete-assignments.md)
