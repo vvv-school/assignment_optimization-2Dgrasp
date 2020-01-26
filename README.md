@@ -46,8 +46,6 @@ The assumption of a 2D world helps simplify the Problem settings such that a for
 with only a **scalar along the z axis**. In detail, we can take advantage of the class [`yarp::sig::Vector`](http://yarp.it/classyarp_1_1sig_1_1VectorOf.html) and
 the utilities defined in [`yarp/math/Math.h`](http://yarp.it/Math_8h.html) to deal with the required linear algebra (e.g. summation of vectors, inner and outer products).
 
-<details>
-<summary>Click to show how to compute net force and net torque</summary>
 The net force `Ftot` and net torque `Ttot` can be readily obtained by recruiting Netwon's law:
 ```c++
 // F0 relative quantities
@@ -71,7 +69,6 @@ double Ttot=(P0-COM)[0]*(F0.fn*N0[1]+F0.ft*T0[1])-(P0-COM)[1]*(F0.fn*N0[0]+F0.ft
             (P1-COM)[0]*(F1.fn*N1[1]+F1.ft*T1[1])-(P1-COM)[1]*(F1.fn*N1[0]+F1.ft*T1[0])+
             (P2-COM)[0]*(F2.fn*N2[1]+F2.ft*T2[1])-(P2-COM)[1]*(F2.fn*N2[0]+F2.ft*T2[0]);
 ```
-</details>
 
 ## Code Structure
 The relevant code structure is reported below:
@@ -135,7 +132,9 @@ We recommend that you tackle the assignment incrementally:
 1. Then, extend the solution in order to incorporate Newton's first law also for **rotational motion**.
 1. Finally, consider friction cones and thus deal with **tangential components** of the forces, while avoiding slippage.
 
-## Grading
+<details>
+<summary>Click to show how Grading works</summary>
+
 The test suite will perform two consecutive verifications:
 1. A Problem with an object whose shape is a **perfect cirlce** is generated **100 times** and checks are done to verify the grasp stability of your solution.
    The force `F0` is always set normal to the perimeter.
@@ -168,5 +167,6 @@ If the success rate of requirements R2.* is greater than or equal to 98%, then y
 | R2.3 | 0 … 8 |
 
 The maximum score you can achieve is therefore **36** 🏆
+</details>
 
 # [How to complete the assignment](https://github.com/vvv-school/vvv-school.github.io/blob/master/instructions/how-to-complete-assignments.md)
