@@ -133,18 +133,18 @@ $ ./test.sh
 ---
 The test suite will perform two consecutive verifications:
 1. A Problem with an object whose shape is a **perfect cirlce** is generated **100 times** and checks are done to verify the grasp stability of your solution.
-   The force `F0` is always set normal to the perimeter.
+   The force `F0` is always set **normal to the perimeter**.
 1. A Problem with an object whose shape is a **irregular patch** is generated **100 times** and checks are done to verify the grasp stability of your solution.
-   The force `F0` can be generically oriented inward within its friction cone.
+   The force `F0` can be generically **oriented inward within its friction cone**.
 
-The score is then computed according to the following requirements.
+The score is then computed statistically over the 100 trials according to the following requirements.
 
-#### R1. Requirements to satisfy with a circular shaped object
+#### R1. Requirements to satisfy with a circle-shaped object
 1. **Linear stability**. The net force F shall be in norm smaller than 0.01: 100% of success rate amounts to 4 points.
 1. **Rotational stability**. The torque T shall be in norm smaller than 0.01: 100% of success rate amounts to 4 points.
 1. **No slippage**. The two forces provided by your algorithm shall be contained within the friction cones to prevent slippage: 100% of success rate amounts to 4 points.
 
-#### R2. Requirements to satisfy with a patched shaped object
+#### R2. Requirements to satisfy with a patch-shaped object
 1. **Linear stability**. The net force F shall be in norm smaller than 0.01: 100% of success rate amounts to 4 points.
 1. **Rotational stability**. The net torque T shall be in norm smaller than 0.01: 100% of success rate amounts to 4 points.
 1. **No slippage**. The two forces provided by your algorithm shall be contained within the friction cones to prevet slippage: 100% of success rate amounts to 4 points.
