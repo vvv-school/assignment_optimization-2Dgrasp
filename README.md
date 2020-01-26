@@ -169,7 +169,7 @@ The maximum score you can achieve is therefore **36** 🏆
 
 ## Incremental Approach
 We recommend that you tackle the assignment incrementally:
-1. First, [**peruse the solution we provided**](https://github.com/vvv-school/assignment_optimization-2Dgrasp/wiki/Solution-for-Linear-Motion-Only) for the case of an object with a perfect circular perimeter where torques can be negleted and the focus is only on normal forces. 
+1. First, [**peruse the solution we provided**](https://github.com/vvv-school/assignment_optimization-2Dgrasp/wiki/Solution-for-Linear-Motion-Only) for the case where we handle only normal forces and we neglect torques. Therefore, grasp stability can be attained only for **linear motion**.
 1. Then, extend the solution in order to incorporate Newton's first law also for **rotational motion**.
 1. Finally, consider friction cones and thus deal with **tangential components** of the forces, while avoiding slippage.
 
