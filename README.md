@@ -150,7 +150,7 @@ The score is then computed statistically over the 100 trials according to the fo
 1. **No slippage**. The two forces provided by your algorithm shall be contained within the friction cones to prevet slippage: 100% of success rate amounts to 4 points.
 
 #### 🌟 Bonus
-If **R2.* ≥ 98%**, then you will get the **corresponding points doubled**.
+If **R2.{1,2,3} ≥ 98%**, then you will get the **corresponding points doubled**.
 
 #### Score Map
 | Requirements | Points |
