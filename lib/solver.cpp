@@ -3,7 +3,7 @@
 // Author: Ugo Pattacini - <ugo.pattacini@iit.it>
 
 #undef NDEBUG
-#include <assert.h>
+#include <cassert>
 
 #include <cmath>
 #include <limits>

@@ -5,7 +5,7 @@
 */
 
 #undef NDEBUG
-#include <assert.h>
+#include <cassert>
 
 #include <memory>
 #include <utility>
