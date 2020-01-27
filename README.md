@@ -149,8 +149,8 @@ The score is then computed statistically over the 100 trials according to the fo
 1. **Rotational stability**. The net torque T shall be in norm smaller than 0.01: 100% of success rate amounts to 4 points.
 1. **No slippage**. The two forces provided by your algorithm shall be contained within the friction cones to prevet slippage: 100% of success rate amounts to 4 points.
 
-#### Bonus 🌟
-If the success rate of requirements R2.* is greater than or equal to 98%, then you will get the points doubled.
+#### 🌟 Bonus
+If **R2.* ≥ 98%**, then you will get the **corresponding points doubled**.
 
 #### Score Map
 | Requirements | Points |
