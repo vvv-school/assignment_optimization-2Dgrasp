@@ -101,21 +101,19 @@ $ make install
 ```
 
 ### Test the Code
-To test your solution against an object whose perimeter is a perfect circle do:
-```sh
-$ assignment_optimization-2Dgrasp --shape circle
-```
-
-To test your solution against an object whose perimeter is an irregular patch do:
-```sh
-$ assignment_optimization-2Dgrasp --shape patch
-```
-
-In both cases, the outcome can be conveniently displayed this way:
-```sh
-$ plot_2Dgrasp-problem problem.out
-```
-Then, open up the file `problem.out.png`. Figure 3 illustrates a typical outcome.
+- To test your solution against an object whose perimeter is a **perfect circle** do:
+  ```sh
+  $ assignment_optimization-2Dgrasp --shape circle
+  ```
+- To test your solution against an object whose perimeter is an **irregular patch** do:
+  ```sh
+  $ assignment_optimization-2Dgrasp --shape patch
+  ```
+- In both cases, the outcome can be conveniently displayed this way:
+  ```sh
+  $ plot_2Dgrasp-problem problem.out
+  ```
+  Then, open up the file `problem.out.png`. Figure 3 illustrates a typical outcome.
 
 | Figure 3 |
 | :---: |
