@@ -145,12 +145,8 @@ The score is then computed statistically over the 100 trials according to the fo
 1. **No slippage**. The two forces provided by your algorithm shall be contained within the friction cones to prevent slippage: 100% of success rate amounts to 4 points.
 
 #### R2. Requirements to satisfy with a patch-shaped object
-1. **Linear stability**. The net force F shall be in norm smaller than 0.01: 100% of success rate amounts to 4 points.
-1. **Rotational stability**. The net torque T shall be in norm smaller than 0.01: 100% of success rate amounts to 4 points.
-1. **No slippage**. The two forces provided by your algorithm shall be contained within the friction cones to prevet slippage: 100% of success rate amounts to 4 points.
-
-#### 🌟 Bonus
-If **R2.{1,2,3} ≥ 98%**, then you will get the **corresponding points doubled**.
+Same as R1 but with a bonus 🌟:
+- if **R2.{1,2,3} ≥ 98%**, then you will get the **corresponding points doubled**.
 
 #### Score Map
 | Requirements | Points |
