@@ -145,8 +145,7 @@ The score is then computed statistically over the 100 trials according to the fo
 1. **No slippage**. The two forces provided by your algorithm shall be contained within the friction cones to prevent slippage: 100% of success rate amounts to 4 points.
 
 #### R2. Requirements to satisfy with a patch-shaped object
-Same as R1 but with a bonus 🌟:
-- if **R2.{1,2,3} ≥ 98%**, then you will get the **corresponding points doubled**.
+- Same as R1 but with a bonus 🌟: if **R2.{1,2,3} ≥ 98%**, then you will get the **corresponding points doubled**.
 
 #### Score Map
 | Requirements | Points |
