@@ -70,6 +70,20 @@ double Ttot=(P0-COM)[0]*(F0.fn*N0[1]+F0.ft*T0[1])-(P0-COM)[1]*(F0.fn*N0[0]+F0.ft
             (P2-COM)[0]*(F2.fn*N2[1]+F2.ft*T2[1])-(P2-COM)[1]*(F2.fn*N2[0]+F2.ft*T2[0]);
 ```
 
+### Dealing with Friction Cones
+We recall that a [Force](https://vvv-school.github.io/assignment_optimization-2Dgrasp/doxygen/doc/html/structproblem__ns_1_1Force.html) `F` does not cause slippage only if **`|F.ft| ≤ μ·|F.fn|`**, where μ is the static friction coefficient of the object.
+
+This can be coded in the following snippet:
+```c++
+problem_ns::Force F;
+
+// explicit check
+bool no_slippage=(fabs(F.ft)<problem.get_friction()*fabs(F.fn));
+
+// check through function call
+bool no_slippage=problem.check_no_slippage(F);
+```
+
 ## Code Structure
 The relevant code structure is reported below:
 ```sh
