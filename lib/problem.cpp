@@ -292,8 +292,7 @@ pair<Vector,double> Problem::compute_newton_law(const vector<Force>& forces) con
 /***************************************************/
 bool Problem::check_no_slippage(const Force& force) const
 {
-    auto ft_max=friction*fabs(force.fn);
-    return ((force.ft>=-ft_max) && (force.ft<=ft_max));
+    return (fabs(force.ft)<=friction*fabs(force.fn));
 }
 
 /***************************************************/

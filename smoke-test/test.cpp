@@ -56,8 +56,7 @@ class TestAssignmentOptimization2DGrasp : public yarp::robottestingframework::Te
     bool check_no_slippage(const Problem& problem, const vector<Force>& forces) const
     {
         for (auto &f:forces) {
-            auto ft_max=problem.get_friction()*fabs(f.fn);
-            if ((f.ft<-ft_max) || (f.ft>ft_max)) {
+            if (fabs(f.ft)>problem.get_friction()*fabs(f.fn)) {
                 return false;
             }
         }
