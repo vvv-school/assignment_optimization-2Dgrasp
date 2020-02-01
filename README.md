@@ -64,7 +64,7 @@ yarp::sig::Vector Ftot=F0.fn*N0+F1.fn*N1+F2.fn*N2+F0.ft*T0+F1.ft*T1+F2.ft*T2;
 // Center Of Mass of the object
 yarp::sig::Vector COM=problem.get_COM();
 
-// rotation (z-axis): only the third component of the outer product is relevant
+// rotation (z-axis): only the third component of the outer product is nonzero
 double Ttot=(P0-COM)[0]*(F0.fn*N0[1]+F0.ft*T0[1])-(P0-COM)[1]*(F0.fn*N0[0]+F0.ft*T0[0])+
             (P1-COM)[0]*(F1.fn*N1[1]+F1.ft*T1[1])-(P1-COM)[1]*(F1.fn*N1[0]+F1.ft*T1[0])+
             (P2-COM)[0]*(F2.fn*N2[1]+F2.ft*T2[1])-(P2-COM)[1]*(F2.fn*N2[0]+F2.ft*T2[0]);
