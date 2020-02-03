@@ -56,12 +56,12 @@ class Problem
 public:
    /**
     * Configure the problem.
-    * @param ci is a 4D vector containing the coefficients of the object's perimeter.
+    * @param shape is a 4D vector containing the coefficients of the object's perimeter.
     * @param friction is in range [0,1].
     * @param F is the applied force.    
     * @return true/false on success/failure.
     */
-    bool configure(const std::vector<double> &ci, const double friction,
+    bool configure(const std::vector<double> &shape, const double friction,
                    const Force &F);
 
    /**
@@ -81,7 +81,7 @@ public:
     * Retrieve the current vector of coefficients describing the object's perimeter.
     * @return the perimeter's coefficients.
     */
-    const std::vector<double>& get_ci() const;
+    const std::vector<double>& get_shape() const;
 
    /**
     * Retrieve the friction value.

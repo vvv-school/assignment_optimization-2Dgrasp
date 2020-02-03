@@ -47,14 +47,14 @@ double integrand_COMy(double t, void* params)
 }
 
 /***************************************************/
-bool Problem::configure(const vector<double> &ci,
+bool Problem::configure(const vector<double> &shape,
                         const double friction,
                         const Force &F)
 {
     configured=false;
-    if ((ci.size()==this->ci.size()) &&
+    if ((shape.size()==ci.size()) &&
         (friction>=0.) && (friction<=1.)) {
-        this->ci=ci;
+        ci=shape;
         this->friction=friction;
         this->F=F;
         auto ft_max=this->friction*fabs(this->F.fn);
@@ -156,7 +156,7 @@ Vector Problem::calc_COM()
 }
 
 /***************************************************/
-const vector<double>& Problem::get_ci() const
+const vector<double>& Problem::get_shape() const
 {
     assert(configured);
     return ci;
