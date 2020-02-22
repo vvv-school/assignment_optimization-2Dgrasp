@@ -44,7 +44,7 @@ In particular, with these settings, a [Force](https://vvv-school.github.io/assig
 ## Physics in the 2D World
 The assumption of a 2D world helps simplify the Problem settings such that a force boils down to a **2D vector in the x-y plane**, whereas a torque can be represented
 with only a **scalar along the z axis**. In detail, we can take advantage of the class [`yarp::sig::Vector`](http://yarp.it/classyarp_1_1sig_1_1VectorOf.html) and
-the utilities defined in [`yarp/math/Math.h`](http://yarp.it/Math_8h.html) to deal with the required linear algebra (e.g. summation of vectors, inner and outer products).
+the utilities defined in [`yarp/math/Math.h`](http://yarp.it/Math_8h.html) to deal with the required linear algebra (e.g. summation of vectors, dot and cross products).
 
 The net force `Ftot` and net torque `Ttot` can be readily obtained by recruiting Netwon's law:
 ```c++
@@ -64,11 +64,21 @@ yarp::sig::Vector Ftot = F0.fn*N0 + F1.fn*N1 + F2.fn*N2 + F0.ft*T0 + F1.ft*T1 + 
 // Center Of Mass of the object
 yarp::sig::Vector COM = problem.get_COM();
 
-// rotation (z-axis): only the third component of the outer product is nonzero
+// rotation (z-axis): only the third component of the cross product is nonzero
 double Ttot = (P0-COM)[0] * (F0.fn*N0[1] + F0.ft*T0[1]) - (P0-COM)[1] * (F0.fn*N0[0] + F0.ft*T0[0]) +
               (P1-COM)[0] * (F1.fn*N1[1] + F1.ft*T1[1]) - (P1-COM)[1] * (F1.fn*N1[0] + F1.ft*T1[0]) +
               (P2-COM)[0] * (F2.fn*N2[1] + F2.ft*T2[1]) - (P2-COM)[1] * (F2.fn*N2[0] + F2.ft*T2[0]);
 ```
+
+<details>
+<summary>🔘 Click to get more details on the cross product</summary>
+
+---
+The torque is the vector resulting from the [cross product](https://en.wikipedia.org/wiki/Cross_product) between the vector representing the application point of the force and the force itself. In the Newtonian dynamics it is convenient to express such quantities in the frame attached to the center of mass.
+![cross-product](/assets/cross-product.png)
+
+---
+</details>
 
 ### Dealing with Friction Cones
 We recall that a [Force](https://vvv-school.github.io/assignment_optimization-2Dgrasp/doxygen/doc/html/structproblem__ns_1_1Force.html) `F` does not cause slippage only if **`|F.ft| ≤ μ·|F.fn|`**, where μ is the static friction coefficient of the object.
