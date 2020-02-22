@@ -75,6 +75,7 @@ double Ttot = (P0-COM)[0] * (F0.fn*N0[1] + F0.ft*T0[1]) - (P0-COM)[1] * (F0.fn*N
 
 ---
 The torque is the vector resulting from the [cross product](https://en.wikipedia.org/wiki/Cross_product) between the vector representing the application point of the force and the force itself. In the Newtonian dynamics it is convenient to express such quantities in the frame attached to the center of mass.
+
 ![cross-product](/assets/cross-product.png)
 
 ---
