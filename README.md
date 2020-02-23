@@ -113,7 +113,7 @@ assignment_optimization-2Dgrasp
     └── main.cpp                    # Main code to test your implementation
 ```
 
-📝 You are asked to develop within the file `lib/solver.cpp` the solution that exploits the nonlinear constrained optimization package Ipopt.
+📝 You are asked to develop within the file [`lib/solver.cpp`](./lib/solver.cpp) the solution that exploits the nonlinear constrained optimization package Ipopt.
 
 The library is [documented online](https://vvv-school.github.io/assignment_optimization-2Dgrasp) 🌐
 
