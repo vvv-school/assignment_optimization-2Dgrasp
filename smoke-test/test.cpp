@@ -14,7 +14,6 @@
 #include <vector>
 #include <cmath>
 #include <numeric>
-#include <IpIpoptApplication.hpp>
 #include <robottestingframework/dll/Plugin.h>
 #include <robottestingframework/TestAssert.h>
 #include <yarp/robottestingframework/TestCase.h>

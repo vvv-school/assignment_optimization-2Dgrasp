@@ -9,6 +9,7 @@ project(TestAssignmentOptimization2DGrasp)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/plugins)
 set(CMAKE_SHARED_MODULE_PREFIX "")
 
+find_package(YCM REQUIRED)
 find_package(ICUBcontrib REQUIRED)
 find_package(RobotTestingFramework 2.0.0 COMPONENTS DLL)
 find_package(YARP 3.3.0 REQUIRED COMPONENTS os sig math robottestingframework)
