@@ -49,7 +49,8 @@ set_property(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY LINK_FLAGS " ${IPOPT_
 target_compile_definitions(${PROJECT_NAME} PUBLIC ${IPOPT_DEFINITIONS} PRIVATE _USE_MATH_DEFINES)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${YARP_LIBRARIES} ${IPOPT_LIBRARIES} PRIVATE ${GSL_LIBRARIES})
 target_include_directories(${PROJECT_NAME} PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-                                                  "$<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}>")
+                                                  "$<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}>"
+                                                  ${IPOPT_INCLUDE_DIRS})
 
 install(TARGETS ${PROJECT_NAME}
         EXPORT  ${PROJECT_NAME}
