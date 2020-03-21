@@ -89,11 +89,12 @@ public:
     void run() override
     {
         double F_eps{.01}, T_eps{.01};
-        int F_fails{0}, T_fails{0}, slippage_fails{0};
         int N{100}, score{0};
 
         vector<string> types{"circle","patch"};
         for (auto &type:types) {
+            int F_fails{0}, T_fails{0}, slippage_fails{0};
+            
             for (int n=0; n<N; n++) {
                 ostringstream ss;
                 ss.precision(5);
