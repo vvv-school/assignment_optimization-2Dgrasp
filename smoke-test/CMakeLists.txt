@@ -13,7 +13,6 @@ find_package(ICUBcontrib REQUIRED)
 find_package(RobotTestingFramework 2.0.0 COMPONENTS DLL)
 find_package(YARP 3.3.0 REQUIRED COMPONENTS os sig math robottestingframework)
 find_package(ICUB REQUIRED)
-list(APPEND CMAKE_MODULE_PATH ${ICUB_MODULE_PATH})
 list(APPEND CMAKE_MODULE_PATH ${ICUBCONTRIB_MODULE_PATH})
 
 include(ICUBcontribOptions)
