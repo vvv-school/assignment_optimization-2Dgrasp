@@ -1,7 +1,7 @@
 Nonlinear Constrained Optimization with Ipopt
 =============================================
 
-[![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vvv-school/assignment_optimization-2Dgrasp)
+[![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer)
 
 # Prerequisites
 To tackle this assignment you would need to know the following:
