@@ -25,7 +25,7 @@ of an external agent exerting the force.
 To achieve this, the forces need to **point inward** and guarantee that **Newton's first law** is satisfied both for linear and rotational motion.
 Further, to **prevent slippage**, `F1` and `F2` are requested to lie within their **friction cones**.
 
-👉 Think of `F0`, `F1` and `F2` as the solution of a 2D planar grasp problem with a 3 fingers gripper, where the force applied by one finger (i.e. `F0`) is already determined.
+👉 Think of `F0`, `F1`, and `F2` as the solution of a 2D planar grasp problem with a 3-finger gripper, where the force applied by one finger (i.e. `F0`) is already determined.
 
 ## Problem Settings
 The object's perimeter is contained in the x-y plane and is parametrized in terms of the angular position `t` specified in radians. Moreover, the [Problem API](https://vvv-school.github.io/assignment_optimization-2Dgrasp/doxygen/doc/html/classproblem__ns_1_1Problem.html) provides you with suitable routines to retrieve the point `P`, the normal `N` and the tangent `T` as a function of the parameter `t` (**Figure 2**). Also, the API gives you the derivatives of such quantities with respect to `t`. 
@@ -143,7 +143,7 @@ cmake --build build/ --target install
 | :---: |
 | ![example-solution](/assets/example-solution.png) |
 
-Once you deem you're ready to go, you can accept the challenge of the grading test suite by doing:
+Once you deem you're good to go, you can accept the challenge of the grading test suite by doing:
 ```console
 cd assignment_optimization-2Dgrasp/smoke-test
 ./test.sh
