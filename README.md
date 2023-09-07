@@ -118,25 +118,24 @@ assignment_optimization-2Dgrasp
 The library is [documented online](https://vvv-school.github.io/assignment_optimization-2Dgrasp) 🌐
 
 ### Build the Code
-```sh
-$ cd assignment_optimization-2Dgrasp
-$ mkdir -p build && cd build
-$ cmake ..
-$ make install
+```console
+cd assignment_optimization-2Dgrasp
+cmake -S . -B build
+cmake --build build/ --target install
 ```
 
 ### Test the Code
 - To test your solution against an object whose perimeter is a **perfect circle** do:
-  ```sh
-  $ assignment_optimization-2Dgrasp --shape circle
+  ```console
+  assignment_optimization-2Dgrasp --shape circle
   ```
 - To test your solution against an object whose perimeter is an **irregular patch** do:
-  ```sh
-  $ assignment_optimization-2Dgrasp --shape patch
+  ```console
+  assignment_optimization-2Dgrasp --shape patch
   ```
 - In both cases, the outcome can be conveniently displayed this way:
-  ```sh
-  $ plot_2Dgrasp-problem problem.out
+  ```console
+  plot_2Dgrasp-problem problem.out
   ```
   Then, open up the file `problem.out.png`. Figure 3 illustrates a typical outcome.
 
@@ -145,9 +144,9 @@ $ make install
 | ![example-solution](/assets/example-solution.png) |
 
 Once you deem you're ready to go, you can accept the challenge of the grading test suite by doing:
-```sh
-$ cd assignment_optimization-2Dgrasp/smoke-test
-$ ./test.sh
+```console
+cd assignment_optimization-2Dgrasp/smoke-test
+./test.sh
 ```
 
 <details>
