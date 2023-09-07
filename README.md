@@ -28,7 +28,7 @@ Further, to **prevent slippage**, `F1` and `F2` are requested to lie within thei
 👉 Think of `F0`, `F1` and `F2` as the solution of a 2D planar grasp problem with a 3 fingers gripper, where the force applied by one finger (i.e. `F0`) is already determined.
 
 ## Problem Settings
-The object's perimeter is contained in the x-y plane and is parmetrized in terms of the angular position `t` specified in radians. Moreover, the [Problem API](https://vvv-school.github.io/assignment_optimization-2Dgrasp/doxygen/doc/html/classproblem__ns_1_1Problem.html) provides you with the suitable routines to retrieve the point `P`, the normal `N` and the tangent `T` as function of the parameter `t` (**Figure 2**). Also, the API gives you the derivatives of such quantities with respect to `t`. 
+The object's perimeter is contained in the x-y plane and is parametrized in terms of the angular position `t` specified in radians. Moreover, the [Problem API](https://vvv-school.github.io/assignment_optimization-2Dgrasp/doxygen/doc/html/classproblem__ns_1_1Problem.html) provides you with suitable routines to retrieve the point `P`, the normal `N` and the tangent `T` as a function of the parameter `t` (**Figure 2**). Also, the API gives you the derivatives of such quantities with respect to `t`. 
 
 ⚠ Be careful that `N(t)` and `T(t)` are **NOT unit vectors**.
 
@@ -46,7 +46,7 @@ The assumption of a 2D world helps simplify the Problem settings such that a for
 with only a **scalar along the z axis**. In detail, we can take advantage of the class [`yarp::sig::Vector`](http://yarp.it/classyarp_1_1sig_1_1VectorOf.html) and
 the utilities defined in [`yarp/math/Math.h`](http://yarp.it/Math_8h.html) to deal with the required linear algebra (e.g. summation of vectors, dot and cross products).
 
-The net force `Ftot` and net torque `Ttot` can be readily obtained by recruiting Netwon's law:
+The net force `Ftot` and net torque `Ttot` can be readily obtained by recruiting Newton's law:
 ```c++
 // F0 relative quantities
 problem_ns::Force F0 = problem.get_F();
@@ -71,10 +71,10 @@ double Ttot = (P0-COM)[0] * (F0.fn*N0[1] + F0.ft*T0[1]) - (P0-COM)[1] * (F0.fn*N
 ```
 
 <details>
-<summary>🔘 Click to get more details on the cross product</summary>
+<summary>🔘 Click to get more details on the cross-product</summary>
 
 ---
-The torque is the vector resulting from the [cross product](https://en.wikipedia.org/wiki/Cross_product) between the vector representing the application point of the force and the force itself. In the Newtonian dynamics it is convenient to express such quantities in the frame attached to the center of mass.
+The torque is the vector resulting from the [cross product](https://en.wikipedia.org/wiki/Cross_product) between the vector representing the application point of the force and the force itself. In Newtonian dynamics, it is convenient to express such quantities in the frame attached to the center of mass.
 
 ![cross-product](/assets/cross-product.png)
 
